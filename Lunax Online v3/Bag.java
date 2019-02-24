@@ -5,6 +5,8 @@ public class Bag {
     int fullSlot;
     int useSlot;
     public ArrayList<Items> items;
+    public Potion pt;
+    public Armor am;
     Scanner sc = new Scanner(System.in);
     int count;
     int potion;
@@ -14,11 +16,13 @@ public class Bag {
     public Bag(int _slot) {
         fullSlot = _slot;
         useSlot = 0;
-        items = new ArrayList<Items>();
         count = 0;
         potion = 0;
         sword = 0;
         armor = 0;
+        items = new ArrayList<Items>();
+        pt = new Potion();
+        am = new Armor();
     }
 
     public int openBag() {
@@ -26,6 +30,10 @@ public class Bag {
         int select = 0;
         System.out.println("------------------- Open Inventory ------------------");
         System.out.println("Your Items ::");
+        System.out.println("++++++");
+        pt.showPotionDetial();
+        am.showArmorDetial();
+        System.out.println("++++++");
         showItems();
         System.out.println("Use Items [1] : Exit Inventory [2]");
 
